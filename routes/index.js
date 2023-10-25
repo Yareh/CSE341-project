@@ -7,7 +7,6 @@ const PATH_ROUTES = __dirname;
 const removeExtension = (fileName) => {
   return fileName.split(".").shift();
 };
-
 fs.readdirSync(PATH_ROUTES).filter((file) => {
   const name = removeExtension(file);
   if (name !== 'index') {
@@ -15,5 +14,4 @@ fs.readdirSync(PATH_ROUTES).filter((file) => {
       router.use('/', require('./swagger.js'));
   }
 });
-
 module.exports = router;

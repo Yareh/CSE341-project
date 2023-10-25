@@ -5,7 +5,7 @@ let dbConection;
 const ConectionDb = (cb) => {
   MongoClient.connect(uri)
     .then((client) => {
-      dbConection = client.db("CSE"); 
+      dbConection = client.db("CSE");
       return cb();
     })
     .catch((err) => {

@@ -1,46 +1,103 @@
-//REQUESTS
-//Week 1 and 2
-
-//Show result from function 
 ###
-GET http://localhost:8080/contacts HTTP/1.1
-
-//Look by a specific id
+GET http://localhost:3000/courses HTTP/1.1
 ###
-GET http://localhost:8080/contacts/650ccb1dae50efad65e1419e HTTP/1.1 
-
-
-//render
+GET http://localhost:3000/courses/63e86f953023bcf771f22b07 HTTP/1.1
 ###
-GET https://cse-341-yareh.onrender.com HTTP/1.1
-###
-GET https://cse-341-yareh.onrender.com/contacts/650ccb1dae50efad65e1419e HTTP/1.1
-
-//Week 3
-//Post (Adds contact)
-###
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:3000/courses HTTP/1.1
 Content-Type: application/json
 
-{
-    "firstName":"Melanie", 
-    "lastName":"Martinez",
-    "email":"melaniem@gmail.com",
-    "favoriteColor":"pink",
-    "birthday":"06/12/1997"
-}
-//Put (Modifies contact)
+  {
+    "code": "CSE-341",
+    "name": "Back end development 2",
+    "tutor": "Nathan Birch"
+  }
 ###
-PUT http://localhost:8080/contacts/650cf6deae50efad65e141a5 HTTP/1.1
+POST http://localhost:3000/courses HTTP/1.1
 Content-Type: application/json
 
-{
-    "firstName":"Mia",
-    "lastName":"Eliott",
-    "email":"miaelliott@gmail.com",
-    "favoriteColor":"pink",
-    "birthday":"12/02/1991"
-}
-//delete
+  {
+    "code": "CSE-341",
+    "name": "Back end development 2",
+    "tutor": ""
+  }
 ###
-DELETE http://localhost:8080/contacts/6518a985d6256590f7e6e6ec HTTP/1.1
+PUT http://localhost:3000/courses/63dea47bd27b9ad5108b1a65 HTTP/1.1
+Content-Type: application/json
+
+  {
+    "code": "",
+    "name": "Back end development 2",
+    "tutor": "Nathan Birch"
+  }
+###
+PUT http://localhost:3000/courses/63dea47bd27b9ad5108b1a65 HTTP/1.1
+Content-Type: application/json
+
+  {
+    "code": "CSE-340",
+    "name": "Back end development 2",
+    "tutor": "Nathan Birch"
+  }
+###
+DELETE http://localhost:3000/courses/63e875ba4ca25be4b2e24023 HTTP/1.1
+
+
+###
+GET http://localhost:3000/student HTTP/1.1
+###
+GET http://localhost:3000/student/63dea512d27b9ad5108b1a66 HTTP/1.1
+###
+POST http://localhost:3000/student HTTP/1.1
+Content-Type: application/json
+
+  {
+  "name": "Alexis Ortiz",
+  "country": "Ecuador",
+  "email": "alexis.ortiz19@outlook.com",
+  "age": 30,
+  "class": "63dea47bd27b9ad5108b1a65",
+  "city": "Tulcan",
+  "phone": "0985096366"
+  }
+###
+POST http://localhost:3000/student HTTP/1.1
+Content-Type: application/json
+
+  {
+  "name": "Alexis Ortiz",
+  "country": "",
+  "email": "alexis.ortiz19@outlook.com",
+  "age": 30,
+  "class": "63dea47bd27b9ad5108b1a65",
+  "city": "Tulcan",
+  "phone": "0985096366"
+  }
+
+###
+PUT http://localhost:3000/student/63e882019175a33d6f2f05fc HTTP/1.1
+Content-Type: application/json
+
+  {
+  "name": "Alexis Ortiz",
+  "country": "Ibarra",
+  "email": "alexis.ortiz19@outlook.com",
+  "age": 30,
+  "class": "63dea47bd27b9ad5108b1a65",
+  "city": "Tulcan",
+  "phone": "0985096366"
+  }
+###
+PUT http://localhost:3000/student/63dea47bd27b9ad5108b1a65 HTTP/1.1
+Content-Type: application/json
+
+  {
+  "name": "Alexis Ortiz",
+  "country": "",
+  "email": "alexis.ortiz19@outlook.com",
+  "age": 30,
+  "class": "63dea47bd27b9ad5108b1a65",
+  "city": "Tulcan",
+  "phone": "0985096366"
+  }
+###
+DELETE http://localhost:3000/student/63e882019175a33d6f2f05fc HTTP/1.1
