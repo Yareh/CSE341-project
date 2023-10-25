@@ -1,0 +1,46 @@
+//REQUESTS
+//Week 1 and 2
+
+//Show result from function 
+###
+GET http://localhost:8080/contacts HTTP/1.1
+
+//Look by a specific id
+###
+GET http://localhost:8080/contacts/650ccb1dae50efad65e1419e HTTP/1.1 
+
+
+//render
+###
+GET https://cse-341-yareh.onrender.com HTTP/1.1
+###
+GET https://cse-341-yareh.onrender.com/contacts/650ccb1dae50efad65e1419e HTTP/1.1
+
+//Week 3
+//Post (Adds contact)
+###
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"Melanie", 
+    "lastName":"Martinez",
+    "email":"melaniem@gmail.com",
+    "favoriteColor":"pink",
+    "birthday":"06/12/1997"
+}
+//Put (Modifies contact)
+###
+PUT http://localhost:8080/contacts/650cf6deae50efad65e141a5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"Mia",
+    "lastName":"Eliott",
+    "email":"miaelliott@gmail.com",
+    "favoriteColor":"pink",
+    "birthday":"12/02/1991"
+}
+//delete
+###
+DELETE http://localhost:8080/contacts/6518a985d6256590f7e6e6ec HTTP/1.1
