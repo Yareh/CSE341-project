@@ -180,7 +180,7 @@
                   "class": {
                     "example": "any"
                   },
-                  "phoneNumber": {
+                  "phone": {
                     "example": "any"
                   }
                 }
@@ -250,7 +250,7 @@
                   "class": {
                     "example": "any"
                   },
-                  "phoneNumber": {
+                  "phone": {
                     "example": "any"
                   }
                 }
