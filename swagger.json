@@ -162,25 +162,25 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "Name": {
+                  "name": {
                     "example": "any"
                   },
-                  "Country": {
+                  "country": {
                     "example": "any"
                   },
-                  "City": {
+                  "city": {
                     "example": "any"
                   },
-                  "Email": {
+                  "email": {
                     "example": "any"
                   },
-                  "Age": {
+                  "age": {
                     "example": "any"
                   },
-                  "Class": {
+                  "class": {
                     "example": "any"
                   },
-                  "PhoneNumber": {
+                  "phoneNumber": {
                     "example": "any"
                   }
                 }
@@ -232,25 +232,25 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "Name": {
+                  "name": {
                     "example": "any"
                   },
-                  "Country": {
+                  "country": {
                     "example": "any"
                   },
-                  "City": {
+                  "city": {
                     "example": "any"
                   },
-                  "Email": {
+                  "email": {
                     "example": "any"
                   },
-                  "Age": {
+                  "age": {
                     "example": "any"
                   },
-                  "Class": {
+                  "class": {
                     "example": "any"
                   },
-                  "PhoneNumber": {
+                  "phoneNumber": {
                     "example": "any"
                   }
                 }

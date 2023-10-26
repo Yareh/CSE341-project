@@ -24,7 +24,7 @@ const saveStudent = (req, res, next) => {
     country: "required|string",
     city: "required|string",
     email: "required|string",
-    age: "required|string",
+    age: "required|number",
     class: "required|string",
     phone: "required|string",
   };
