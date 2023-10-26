@@ -40,19 +40,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "firstName": {
+                  "course": {
                     "example": "any"
                   },
-                  "lastName": {
+                  "courseName": {
                     "example": "any"
                   },
-                  "email": {
-                    "example": "any"
-                  },
-                  "favoriteColor": {
-                    "example": "any"
-                  },
-                  "birthday": {
+                  "tutor": {
                     "example": "any"
                   }
                 }
@@ -104,19 +98,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "firstName": {
+                  "course": {
                     "example": "any"
                   },
-                  "lastName": {
+                  "courseName": {
                     "example": "any"
                   },
-                  "email": {
-                    "example": "any"
-                  },
-                  "favoriteColor": {
-                    "example": "any"
-                  },
-                  "birthday": {
+                  "tutor": {
                     "example": "any"
                   }
                 }
@@ -174,19 +162,25 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "firstName": {
+                  "Name": {
                     "example": "any"
                   },
-                  "lastName": {
+                  "Country": {
                     "example": "any"
                   },
-                  "email": {
+                  "City": {
                     "example": "any"
                   },
-                  "favoriteColor": {
+                  "Email": {
                     "example": "any"
                   },
-                  "birthday": {
+                  "Age": {
+                    "example": "any"
+                  },
+                  "Class": {
+                    "example": "any"
+                  },
+                  "PhoneNumber": {
                     "example": "any"
                   }
                 }
@@ -238,19 +232,25 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "firstName": {
+                  "Name": {
                     "example": "any"
                   },
-                  "lastName": {
+                  "Country": {
                     "example": "any"
                   },
-                  "email": {
+                  "City": {
                     "example": "any"
                   },
-                  "favoriteColor": {
+                  "Email": {
                     "example": "any"
                   },
-                  "birthday": {
+                  "Age": {
+                    "example": "any"
+                  },
+                  "Class": {
+                    "example": "any"
+                  },
+                  "PhoneNumber": {
                     "example": "any"
                   }
                 }
