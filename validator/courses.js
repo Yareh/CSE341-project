@@ -2,8 +2,8 @@ const { validator } = require("../utils/uValidate");
 
 const saveCourses = (req, res, next) => {
   const validationRule = {
-    code: "required|string",
-    name: "required|string",
+    course: "required|string",
+    courseName: "required|string",
     tutor: "required|string",
   };
   validator(req.body, validationRule, {}, (err, status) => {
@@ -22,9 +22,11 @@ const saveStudent = (req, res, next) => {
   const validationRule = {
     name: "required|string",
     country: "required|string",
-    email: "required|string",
-    class: "required|string",
     city: "required|string",
+    email: "required|string",
+    age: "required|string",
+    class: "required|string",
+    phone: "required|string",
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
