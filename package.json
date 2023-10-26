@@ -17,6 +17,7 @@
     "url": "https://github.com/Yareh/CSE341-project.git"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.0.1",
