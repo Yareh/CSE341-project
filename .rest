@@ -1,37 +1,71 @@
 //courses schema
-GET http://localhost:8080/courses HTTP/1.1
+GET http://localhost:8080/courses/f HTTP/1.1
 
 ###
-GET http://localhost:8080/courses/653863ce949fbf41d72003e0 HTTP/1.1
+GET http://localhost:8080/courses/653b18f434a61a1edc72e173 HTTP/1.1
 
-###
-POST http://localhost:3000/courses HTTP/1.1 Content-Type: application/json
+//new key
+### 
+POST http://localhost:8080/courses HTTP/1.1 
+Content-Type: application/json
 
 {
-"course": "CSE-250", "courseName": "Back end development", "tutor": "Elaine Diaz"
+"course": "CSE 310", "courseName": "none", "tutor": "none"
 }
+//modify
+### 
+PUT http://localhost:8080/courses/653b239438057a5526324166 HTTP/1.1 
+Content-Type: application/json
+
+{
+"course": "CSE 270", "courseName": "Java Basics", "tutor": "Sheila Swan"
+}
+
+### 
+DELETE http://localhost:8080/courses/653b3f7a8a3ced6b20ae7d9c HTTP/1.1
+
+
+//STUDENT 
+
+###
+GET http://localhost:8080/student HTTP/1.1
+
+###
+GET http://localhost:8080/student/653b1deb38057a5526324164 HTTP/1.1
+
+###
+POST http://localhost:8080/student HTTP/1.1 
+Content-Type: application/json
+
+{
+"name":"Samara Hill","country":"Brazil","city":"Rio de janeiro",
+"email":"salamarah@gmail.com","age":"19","class":"653b18f434a61a1edc72e173","phone":"8760992356"
+}
+
+//new key
+### 
+PUT http://localhost:8080/student/653b240d38057a5526324167 HTTP/1.1 
+Content-Type: application/json
+
+{
+"name":"Samara Hill","country":"Brazil","city":"Brasilia",
+"email":"salamarah@gmail.com","age":"20","class":"653b18f434a61a1edc72e173","phone":"8760992356"
+}
+
+### 
+DELETE http://localhost:8080/student/653b247038057a5526324168 HTTP/1.1
+
+
+//RENDER 
+###
+GET https://cse341project-fnj4.onrender.com/student HTTP/1.1
 
 ###
 GET https://cse341project-fnj4.onrender.com/courses HTTP/1.1
 
-### 
-GET http://localhost:3000/courses HTTP/1.1 
 
-### 
-GET http://localhost:3000/courses/63e86f953023bcf771f22b07 HTTP/1.1 
 
-### 
-POST http://localhost:3000/courses HTTP/1.1 
-Content-Type: application/json
 
-{
-"code": "CSE-341", "name": "Back end development 2", "tutor": "Nathan Birch"
-}
 
-### 
-POST http://localhost:3000/courses HTTP/1.1 
-Content-Type: application/json
 
-{
-"code": "CSE-341", "name": "Back end development 2", "tutor": ""
-}
+
