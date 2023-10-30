@@ -17,9 +17,11 @@
     "url": "https://github.com/Yareh/CSE341-project.git"
   },
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "googleapis": "^105.0.0",
     "mongodb": "^5.0.1",
     "mongoose": "^7.6.3",
     "nodemon": "^2.0.20",
