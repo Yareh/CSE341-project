@@ -1,5 +1,5 @@
 //courses schema
-GET http://localhost:8080/courses/f HTTP/1.1
+GET http://localhost:8080/courses/ HTTP/1.1
 
 ###
 GET http://localhost:8080/courses/653b18f434a61a1edc72e173 HTTP/1.1

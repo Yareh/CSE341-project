@@ -1,9 +1,10 @@
-const { getDb } = require("../DB/conection");
+const mongodb = require("../db/conection");
 const { ObjectId } = require("mongodb");
+
+
 const getCourses = (req, res) => {
-  const db = getDb();
   let courses = [];
-  db.collection("courses")
+  mongodb.getDb().db().collection("courses")
     .find()
     .forEach((course) => courses.push(course))
     .then(() => {
@@ -15,22 +16,21 @@ const getCourses = (req, res) => {
 };
 
 const getCoursesById = (req, res) => {
-  const db = getDb();
-  const id = new ObjectId(req.params.id);
-  db.collection("courses")
-  .findOne({ _id:id })
-  .then((doc) => {
-    res.status(200).send(doc);
-  })
-  .catch(() => {
-    res.status(500).json({ error: "Could not get the course by id" });
-  });
-};
+  mongodb.getDb().db().collection("courses")
+      .findOne({ _id: new ObjectId(req.params.id) })
+      .then((doc) => {
+        res.status(200).send(doc);
+       })
+       .catch(() => {
+        res.status(500).json({ error: "Could not fetch the document by id" });
+       });
+}; 
 
 const postCourses = (req, res) => {
-  const db = getDb();
+  
+  //const db = getDb();
   const courses = req.body;
-  db.collection("courses")
+  mongodb.getDb().db().collection("courses")
   .insertOne(courses)
   .then((result) => {
     res.status(201).json(result);
@@ -41,9 +41,8 @@ const postCourses = (req, res) => {
 };
 
 const deleteCourses = (req, res) => {
-  const db = getDb();
   const id = new ObjectId(req.params.id);
-  db.collection("courses")
+  mongodb.getDb().db().collection("courses")
   .deleteOne({ _id:id })
   .then((result) => {
     res.status(200).send(result);
@@ -54,10 +53,9 @@ const deleteCourses = (req, res) => {
   };
 
   const updateCourses = (req, res) => {
-    const db = getDb();
     const id = new ObjectId(req.params.id);
     const courses = req.body;
-    db.collection("courses")
+    mongodb.getDb().db().collection("courses")
       .updateOne({ _id:id }, { $set: courses })
       .then((result) => {
         res.status(204).send(result);
