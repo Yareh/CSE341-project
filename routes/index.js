@@ -4,10 +4,15 @@ const app = express();
 const fs = require("fs");
 const PATH_ROUTES = __dirname;
 
+//const authcontroller = require('../controllers/auth.js');
+
 //CHANGE
 // router.get("/", (req, res) => {
 //   console.log(req.oidc.isAuthenticated());
 // });
+
+const authcontroller = require('../controllers/auth.js');
+
 
 
 const removeExtension = (fileName) => {
@@ -15,11 +20,16 @@ const removeExtension = (fileName) => {
 };
 fs.readdirSync(PATH_ROUTES).filter((file) => {
   const name = removeExtension(file);
+  const {auth} =require('express-openid-connect');
   if (name !== 'index') {
+      router.use(auth(authcontroller.config))
+      //router.use(`/${authcontroller.authentication}`)
       router.use(`/${name}`,require(`./${file}`))
-      router.use('/api-docs', require('./swagger.js'));
+      router.use('/api-docs', require('./swagger.js'))
   }
 });
 
 
+
+//http://localhost:8080/login
 module.exports = router;

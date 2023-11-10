@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const security = require('../middleware/authorize.js'); //
-const coursesController = require('../controllers/courses.js');//
+const security = require('../middleware/authorize.js'); 
+const coursesController = require('../controllers/courses.js');
+const {requiresAuth} = require('express-openid-connect');
 //const { saveCourses } = require("../validator/courses");
 
 // const {
@@ -15,7 +16,7 @@ const coursesController = require('../controllers/courses.js');//
 
 router.get('/', coursesController.getCourses);
 router.get('/:id', coursesController.getCoursesById);
-router.post('/', security.checkLogin, coursesController.postCourses);
+router.post('/', requiresAuth(), security.checkLogin, coursesController.postCourses);
 router.put('/:id', security.checkLogin, coursesController.updateCourses);
 router.delete('/:id', security.checkLogin, coursesController.deleteCourses);
 
