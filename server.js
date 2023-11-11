@@ -66,9 +66,9 @@ mongodb.initDb((err) => {
 });
 
 
- app.get('/', (req,res) => {
-     res.send(req.oidc)
-  });
+// app.get('/', (req,res) => {
+//       res.send(req.oidc)
+//    });
 
 
 

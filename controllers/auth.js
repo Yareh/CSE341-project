@@ -7,6 +7,9 @@ const config = {
     issuerBaseURL: process.env.ISSUER_BASE_URL
   };
 
+//CHANGE?
+  app.use(auth(config));S
+
   // req.isAuthenticated is provided from the auth router
 const authentication = (req, res) => {
     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');

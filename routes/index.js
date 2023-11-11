@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const app = express();
+//const app = express();
 const fs = require("fs");
 const PATH_ROUTES = __dirname;
 
@@ -12,7 +12,7 @@ const PATH_ROUTES = __dirname;
 // });
 
 const authcontroller = require('../controllers/auth.js');
-
+const {auth} =require('express-openid-connect');
 
 
 const removeExtension = (fileName) => {
@@ -20,12 +20,11 @@ const removeExtension = (fileName) => {
 };
 fs.readdirSync(PATH_ROUTES).filter((file) => {
   const name = removeExtension(file);
-  const {auth} =require('express-openid-connect');
   if (name !== 'index') {
-      router.use(auth(authcontroller.config))
       //router.use(`/${authcontroller.authentication}`)
       router.use(`/${name}`,require(`./${file}`))
       router.use('/api-docs', require('./swagger.js'))
+      router.use(auth(authcontroller.config))
   }
 });
 
