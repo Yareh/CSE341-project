@@ -8,7 +8,7 @@ const config = {
   };
 
 //CHANGE?
-  app.use(auth(config));S
+  //app.use(auth(config));
 
   // req.isAuthenticated is provided from the auth router
 const authentication = (req, res) => {
