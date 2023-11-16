@@ -4,28 +4,34 @@ const mongodb = require("./db/conection");
 const app = express();
 const dotenv = require('dotenv'); 
 const {auth} =require('express-openid-connect');
-//const { auth } = require('express-openid-connect');
 //const { auth } = require('express-oauth2-jwt-bearer');
 
 const port = process.env.PORT || 8080;
-dotenv.config();
+require('dotenv').config();
 
-//  const config = {
-//    authRequired: false,
-//    auth0Logout: true,
-//    secret: process.env.SECRET,
-//    baseURL: process.env.BASE_URL,
-//    clientID: process.env.CLIENT_ID,
-//    issuerBaseURL: process.env.ISSUER_BASE_URL,
-//  };
+// CHANGES
+ const config = {
+   authRequired: false,
+   auth0Logout: true,
+   secret: process.env.SECRET,
+   baseURL: process.env.BASE_URL,
+   clientID: process.env.CLIENT_ID,
+   issuerBaseURL: process.env.ISSUER_BASE_URL
+ };
 
-//  app.use(auth(config));
+ app.use(auth(config));
 
-//  app.get('/', (req, res) => {
-//   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-// });
+ // req.isAuthenticated is provided from the auth router
+ app.get('/', (req, res) => {
+   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+ });
 
-// console.log(config);
+
+ app.listen(port, () =>{
+   console.log(`Server listening onn http://localhost:${port}`);
+ });
+
+//ENDS 
 
 
 app
